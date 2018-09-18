@@ -20,11 +20,11 @@ export const MessageItem = ({ message, index }) => (
             fitted
             name="delete"
             onClick={() => {
-              console.log(typeof message.id);
-              // deleteMessage({
-              //   variables: { id: message.id },
-              //   refetchQueries: [{ query: GET_MESSAGES }]
-              // });
+              
+              deleteMessage({
+                variables: { messageId: message.id },
+                refetchQueries: [{ query: GET_MESSAGES }]
+              });
             }}
           />
         )}
