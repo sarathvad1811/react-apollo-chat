@@ -58,8 +58,7 @@ class App extends Component {
         variables: {
           messageContent: e.target.value.trim(),
           channel: "#general"
-        },
-        refetchQueries: [{ query: GET_MESSAGES }] // adding temporarily to render again
+        }
       });
       e.target.value = "";
     }
