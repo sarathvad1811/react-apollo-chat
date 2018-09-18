@@ -25,7 +25,7 @@ export const POST_MESSAGE = gql`
 
 export const DELETE_MESSAGE = gql`
   mutation DELETE_MESSAGE($messageId: ID) {
-    deleteMessage(where: { id: $messageId }) {
+    deleteMessage( id: $messageId ) {
       id
     }
   }
@@ -33,7 +33,7 @@ export const DELETE_MESSAGE = gql`
 
 export const SUBSCRIBE_MESSAGES = gql`
   subscription Message {
-    Message(filter: { mutation_in: [CREATED] }) {
+    Message(filter: { mutation_in: [CREATED, DELETED] }) {
       mutation
       node {
         messageContent
